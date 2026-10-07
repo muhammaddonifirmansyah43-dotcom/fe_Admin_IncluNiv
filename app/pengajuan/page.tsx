@@ -1,7 +1,5 @@
+import DataMahasiswa from "./DataMahasiswa";
+
 export default function PengajuanPage() {
-  return (
-    <main>
-      <h1>pengajuan</h1>
-    </main>
-  );
+  return <DataMahasiswa />;
 }

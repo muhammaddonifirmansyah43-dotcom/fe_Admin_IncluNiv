@@ -1,0 +1,824 @@
+.page {
+  --navy: #0f2d5b;
+  --background: #e6f0ff;
+  --blue: #3b82f6;
+  --muted: #526f99;
+  --sidebar-width: clamp(240px, 24vw, 345px);
+
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  background: var(--background);
+  color: var(--navy);
+  font-family: Inter, Arial, sans-serif;
+}
+
+.page,
+.page * {
+  box-sizing: border-box;
+}
+
+.page button,
+.page input,
+.page select {
+  font: inherit;
+}
+
+.page a {
+  text-decoration: none;
+}
+
+.page button:focus-visible,
+.page a:focus-visible,
+.page input:focus-visible,
+.page select:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+/* HEADER */
+
+.header {
+  height: clamp(56px, 7.3dvh, 100px);
+  flex-shrink: 0;
+  padding: 0 28px 0 22px;
+
+  background: var(--navy);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 1.6vw, 22px);
+}
+
+.menuButton,
+.notificationButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.menuButton svg {
+  width: clamp(28px, 3.2dvh, 44px);
+  height: clamp(28px, 3.2dvh, 44px);
+}
+
+.notificationButton {
+  margin-left: auto;
+}
+
+.notificationButton svg {
+  width: clamp(28px, 3.1dvh, 42px);
+  height: clamp(28px, 3.1dvh, 42px);
+}
+
+.logo {
+  font-size: clamp(28px, 3.1dvh, 42px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.logo span,
+.sidebarLogo span {
+  color: #ff7900;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: 5;
+
+  width: var(--sidebar-width);
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+
+  background: var(--navy);
+  border: 1px solid #274d7e;
+  color: #c5d1e4;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarBrand {
+  height: clamp(95px, 12dvh, 163px);
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 17px 0 24px;
+}
+
+.sidebarLogo {
+  font-size: clamp(25px, 2.35dvh, 32px);
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
+}
+
+.sidebarBrand button {
+  display: flex;
+  flex-shrink: 0;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(7px, 0.9dvh, 12px);
+  padding: 10px 13px 0 20px;
+}
+
+.sidebarNav a {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 1.8vw, 25px);
+  flex-shrink: 0;
+
+  height: clamp(44px, 5.05dvh, 69px);
+  padding: 0 12px;
+
+  border-radius: 20px;
+  color: #c5d1e4;
+
+  font-size: clamp(17px, 1.83dvh, 25px);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sidebarNav a svg {
+  width: clamp(27px, 2.93dvh, 40px);
+  height: clamp(27px, 2.93dvh, 40px);
+
+  flex-shrink: 0;
+  color: white;
+}
+
+.sidebarNav .activeNav {
+  background: #a5b7cf;
+  color: white;
+}
+
+.sidebarNav .activeNav svg {
+  color: var(--blue);
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+
+  margin-top: auto;
+  padding: clamp(18px, 2.9dvh, 40px) 30px;
+
+  color: #ff3d42;
+  font-size: clamp(17px, 1.83dvh, 25px);
+}
+
+.logout svg {
+  width: clamp(27px, 2.64dvh, 36px);
+  height: clamp(27px, 2.64dvh, 36px);
+}
+
+/* MAIN */
+
+.main {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: clamp(14px, 1.7dvh, 23px) 15px 14px;
+}
+
+.sidebarOpen .main {
+  margin-left: var(--sidebar-width);
+  padding-left: 11px;
+  padding-right: 19px;
+}
+
+.heading {
+  flex-shrink: 0;
+  padding-left: 6px;
+}
+
+.heading h1 {
+  margin: 0;
+  font-size: clamp(26px, 2.93dvh, 40px);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.heading p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: clamp(14px, 1.47dvh, 20px);
+  line-height: 1.4;
+}
+
+/* PENCARIAN DAN FILTER */
+
+.toolbar {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    clamp(210px, 20.3vw, 292px)
+    clamp(210px, 20.3vw, 292px);
+
+  align-items: center;
+  flex-shrink: 0;
+
+  gap: clamp(16px, 2.2vw, 32px);
+  margin-top: clamp(20px, 4.39dvh, 60px);
+}
+
+.sidebarOpen .toolbar {
+  grid-template-columns:
+    minmax(0, 1fr)
+    clamp(190px, 16.6vw, 239px)
+    clamp(190px, 16.6vw, 239px);
+
+  gap: clamp(12px, 1.4vw, 20px);
+}
+
+.searchBox {
+  height: clamp(42px, 4.32dvh, 59px);
+  min-width: 0;
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.1vw, 30px);
+
+  background: white;
+  border: 1px solid #b4bfd1;
+  border-radius: 10px;
+}
+
+.searchBox svg {
+  width: clamp(23px, 2.35dvh, 32px);
+  height: clamp(23px, 2.35dvh, 32px);
+
+  flex-shrink: 0;
+  color: var(--navy);
+}
+
+.searchBox input {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+
+  border: none;
+  background: transparent;
+  color: var(--navy);
+  font-size: clamp(14px, 1.18dvh, 16px);
+}
+
+.searchBox input::placeholder {
+  color: #879ab8;
+}
+
+.searchBox input:focus {
+  outline: none;
+}
+
+.searchBox:focus-within {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px #3b82f622;
+}
+
+.selectBox {
+  position: relative;
+  height: clamp(42px, 4.32dvh, 59px);
+  min-width: 0;
+}
+
+.selectBox select {
+  width: 100%;
+  height: 100%;
+  padding: 0 42px 0 20px;
+
+  appearance: none;
+  border: 1px solid #b4bfd1;
+  border-radius: 10px;
+  background: white;
+  color: var(--navy);
+
+  font-size: clamp(16px, 1.76dvh, 24px);
+  cursor: pointer;
+}
+
+.selectBox .limitSelect {
+  padding-left: 10px;
+}
+
+.sidebarOpen .selectBox select {
+  font-size: clamp(15px, 1.47dvh, 20px);
+  padding-left: 16px;
+}
+
+.sidebarOpen .selectBox .limitSelect {
+  padding-left: 10px;
+}
+
+.chevron {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+
+  width: 11px;
+  height: 11px;
+
+  border-right: 1.5px solid var(--navy);
+  border-bottom: 1.5px solid var(--navy);
+
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}
+
+/* TABEL: MENGISI RUANG YANG TERSISA */
+
+.tableContainer {
+  flex: 1;
+  min-height: 0;
+  height: auto;
+
+  margin-top: clamp(20px, 5.78dvh, 79px);
+  padding: 0 8px 8px 0;
+
+  overflow: hidden;
+  border: 1px solid var(--navy);
+  border-radius: 10px;
+  background: white;
+}
+
+.sidebarOpen .tableContainer {
+  flex: 1;
+  min-height: 0;
+  height: auto;
+}
+
+.tableScroll {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  scrollbar-color: var(--blue) var(--background);
+  scrollbar-width: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.sidebarOpen .table {
+  min-width: 850px;
+}
+
+.numberColumn {
+  width: 7%;
+}
+
+.nameColumn {
+  width: 19%;
+}
+
+.nimColumn {
+  width: 20%;
+}
+
+.facultyColumn {
+  width: 19%;
+}
+
+.disabilityColumn {
+  width: 23%;
+}
+
+.actionColumn {
+  width: 12%;
+}
+
+.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  height: clamp(48px, 6.44dvh, 88px);
+  padding: 10px 8px;
+
+  background: #f3f8ff;
+  color: var(--navy);
+
+  font-size: clamp(18px, 2.35dvh, 32px);
+  font-weight: 600;
+  text-align: center;
+
+  border-bottom: 2px solid #e3edff;
+}
+
+.table tbody td {
+  height: clamp(46px, 5.86dvh, 80px);
+  padding: 7px 10px;
+
+  background: white;
+  color: #080808;
+
+  font-size: clamp(16px, 1.91dvh, 26px);
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+
+  border-bottom: 2px solid #e3edff;
+}
+
+.sidebarOpen .table thead th {
+  font-size: clamp(17px, 1.76dvh, 24px);
+  background: var(--background);
+}
+
+.sidebarOpen .table tbody td {
+  font-size: clamp(15px, 1.47dvh, 20px);
+}
+
+.table .nameCell,
+.table .facultyCell {
+  text-align: left;
+}
+
+.nimCell {
+  white-space: nowrap;
+}
+
+.table .emptyCell {
+  height: 120px;
+  font-size: 17px;
+  color: var(--muted);
+}
+
+/* TOMBOL TIGA TITIK */
+
+.actionWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  min-width: 44px;
+  min-height: 34px;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.actionButton span {
+  width: clamp(7px, 0.74dvh, 10px);
+  height: clamp(7px, 0.74dvh, 10px);
+
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+/* MENU LIHAT DETAIL DAN HAPUS */
+
+.actionMenu {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+
+  width: clamp(200px, 18vw, 258px);
+  padding: 5px;
+
+  background: white;
+  border: 1px solid #bbc7d8;
+  border-radius: 21px;
+  box-shadow: 0 4px 5px #00000035;
+}
+
+.detailButton,
+.deleteButton {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  width: 100%;
+  min-height: clamp(40px, 3.88dvh, 53px);
+  padding: 7px 12px;
+
+  border: none;
+  border-radius: 25px;
+
+  font-size: clamp(17px, 1.76dvh, 24px);
+  font-weight: 600;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.detailButton {
+  background: #e6f0ff;
+  color: #0f2d5b;
+}
+
+.detailButton svg,
+.deleteButton svg {
+  width: clamp(25px, 2.5dvh, 34px);
+  height: clamp(25px, 2.5dvh, 34px);
+  flex-shrink: 0;
+}
+
+.detailButton svg {
+  color: #3b82f6;
+}
+
+.deleteButton {
+  margin-top: 5px;
+  background: white;
+  color: #ff3d42;
+}
+
+.detailButton:hover {
+  background: #d7e7ff;
+}
+
+.deleteButton:hover {
+  background: #fff1f1;
+}
+
+/* SCROLLBAR */
+
+.tableScroll::-webkit-scrollbar {
+  width: 14px;
+  height: 10px;
+}
+
+.tableScroll::-webkit-scrollbar-track {
+  background: var(--background);
+  border-radius: 20px;
+}
+
+.tableScroll::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 20px;
+}
+
+.tableScroll::-webkit-scrollbar-button:single-button {
+  display: block;
+  height: 20px;
+
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px;
+}
+
+.tableScroll::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23222' d='M8 1 16 15H0z'/%3E%3C/svg%3E");
+}
+
+.tableScroll::-webkit-scrollbar-button:single-button:vertical:increment {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23222' d='M8 15 16 1H0z'/%3E%3C/svg%3E");
+}
+
+/* FOOTER */
+
+.footer,
+.sidebarOpen .footer {
+  flex-shrink: 0;
+
+  margin: clamp(10px, 1.6dvh, 22px) 0 0;
+  color: var(--muted);
+  font-size: clamp(13px, 1.32dvh, 18px);
+  line-height: 1.4;
+}
+
+/* HALAMAN DETAIL DASAR */
+
+.backLink {
+  display: inline-block;
+  flex-shrink: 0;
+
+  color: var(--blue);
+  font-size: 18px;
+}
+
+.detailCard {
+  min-height: 0;
+  overflow: auto;
+
+  margin-top: 25px;
+  padding: 28px;
+
+  background: white;
+  border-radius: 16px;
+}
+
+.detailCard h1 {
+  margin: 0 0 24px;
+  font-size: clamp(26px, 2.64dvh, 36px);
+}
+
+.detailCard p {
+  font-size: clamp(16px, 1.62dvh, 22px);
+  line-height: 1.5;
+}
+
+/* LAYAR KECIL */
+
+@media (max-width: 1000px) {
+  .toolbar,
+  .sidebarOpen .toolbar {
+    grid-template-columns: minmax(0, 1fr) 190px 190px;
+    gap: 12px;
+  }
+
+  .selectBox select,
+  .sidebarOpen .selectBox select {
+    font-size: 15px;
+    padding-left: 12px;
+  }
+}
+
+@media (max-width: 800px) {
+  .header {
+    padding: 0 16px;
+  }
+
+  .main,
+  .sidebarOpen .main {
+    margin-left: 0;
+    padding: 14px 12px;
+  }
+
+  .sidebar {
+    position: absolute;
+    width: 260px;
+    height: 100%;
+  }
+
+  .heading {
+    padding-left: 0;
+  }
+
+  .heading h1 {
+    font-size: 25px;
+  }
+
+  .heading p {
+    font-size: 13px;
+  }
+
+  .toolbar,
+  .sidebarOpen .toolbar {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .searchBox {
+    grid-column: 1 / -1;
+  }
+
+  .selectBox select,
+  .sidebarOpen .selectBox select {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 30px;
+  }
+
+  .chevron {
+    right: 14px;
+  }
+
+  .tableContainer,
+  .sidebarOpen .tableContainer {
+    margin-top: 18px;
+  }
+}
+/* KONFIRMASI HAPUS MAHASISWA */
+
+.deleteOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  background: #e6f0ff66;
+}
+
+.deleteModal {
+  width: min(460px, 100%);
+  max-height: calc(100dvh - 40px);
+  overflow: auto;
+  box-sizing: border-box;
+
+  padding: 38px 32px 32px;
+  border: 1px solid #8393aa;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 3px 4px #00000030;
+
+  color: #0f2d5b;
+  text-align: center;
+}
+
+.deleteModal > svg {
+  display: block;
+  margin: 0 auto;
+  color: #fa3d43;
+}
+
+.deleteModal h2 {
+  margin: 18px 0 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.deleteModal p {
+  margin: 0;
+  color: #567098;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.deleteButtons {
+  display: flex;
+  gap: clamp(20px, 5vw, 60px);
+  margin-top: 42px;
+}
+
+.deleteButtons button {
+  flex: 1;
+  min-width: 0;
+  min-height: 52px;
+
+  border: 1px solid #3b82f6;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #3b82f6;
+
+  font-family: inherit;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.deleteButtons button:last-child {
+  border-color: #fa3d43;
+  background: #fa3d43;
+  color: #ffffff;
+}
+
+.deleteButtons button:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 3px;
+}
