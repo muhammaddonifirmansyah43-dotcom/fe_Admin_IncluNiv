@@ -1,0 +1,747 @@
+/* LOGO SIDEBAR */
+
+.brandWithLogo {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brandImage {
+  width: clamp(36px, 5vw, 74px);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.brandWithLogo > div {
+  font-size: clamp(21px, 2.2vw, 32px);
+}
+
+/* BINGKAI DETAIL */
+
+.frame {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: clamp(10px, 1.25vw, 17px);
+  border: 1px solid #3b82f6;
+  border-radius: 10px;
+
+  background: #e6f0ff;
+  box-shadow: 0 3px 3px #00000030;
+}
+
+/* KARTU PROFIL */
+
+.profileCard {
+  position: relative;
+  flex-shrink: 0;
+
+  height: clamp(145px, 19.5dvh, 266px);
+  padding:
+    clamp(45px, 4.8dvh, 66px)
+    18px
+    12px
+    clamp(40px, 5.9vw, 85px);
+
+  border-radius: 16px;
+  background: white;
+
+  display: flex;
+  align-items: center;
+}
+
+.backButton {
+  position: absolute;
+  top: 14px;
+  left: 18px;
+
+  display: flex;
+  color: #3b82f6;
+}
+
+.backButton svg {
+  width: clamp(28px, 3.1dvh, 42px);
+  height: clamp(28px, 3.1dvh, 42px);
+}
+
+.resetButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.45vw, 21px);
+
+  min-height: clamp(38px, 4.5dvh, 61px);
+  padding: 7px 12px;
+
+  border: 1px solid #3b82f6;
+  border-radius: 16px;
+  background: white;
+  color: #0f2d5b;
+
+  font-size: clamp(14px, 1.47dvh, 20px);
+  cursor: pointer;
+}
+
+.resetButton svg {
+  width: clamp(25px, 2.64dvh, 36px);
+  height: clamp(25px, 2.64dvh, 36px);
+  color: #3b82f6;
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 1.8vw, 26px);
+  min-width: 0;
+}
+
+.avatar,
+.avatarPlaceholder {
+  width: clamp(78px, 10.8dvh, 148px);
+  height: clamp(78px, 10.8dvh, 148px);
+  flex-shrink: 0;
+
+  border: 1px solid #0f2d5b;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarPlaceholder {
+  display: grid;
+  place-items: center;
+  background: #e6f0ff;
+  color: #3b82f6;
+}
+
+.avatarPlaceholder svg {
+  width: 55%;
+  height: 55%;
+}
+
+.identityText {
+  min-width: 0;
+}
+
+.identityText h1 {
+  margin: 0 0 clamp(8px, 1.3dvh, 18px);
+  color: #0f2d5b;
+
+  font-size: clamp(23px, 2.93dvh, 40px);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.identityMeta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  color: #567098;
+  font-size: clamp(12px, 1.32dvh, 18px);
+}
+
+.identityMeta span {
+  padding: 6px;
+}
+
+.identityMeta span:first-child {
+  padding-left: 0;
+}
+
+.identityMeta span + span {
+  border-left: 1px solid #888;
+}
+
+/* TAB */
+
+.tabs {
+  display: grid;
+  grid-template-columns: 201fr 291fr 474fr;
+  gap: clamp(12px, 2.1vw, 30px);
+
+  margin-top: clamp(14px, 1.6dvh, 22px);
+  flex-shrink: 0;
+}
+
+.tabs button {
+  min-width: 0;
+  height: clamp(44px, 5.42dvh, 74px);
+  padding: 0 10px;
+
+  border: none;
+  border-radius: 11px;
+  background: white;
+  color: #586f94;
+
+  font-size: clamp(16px, 2.35dvh, 32px);
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.tabs .activeTab {
+  background: #3b82f6;
+  color: white;
+}
+
+/* AREA ISI TAB */
+
+.panel {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+
+  margin-top: clamp(16px, 2.56dvh, 35px);
+  overflow: auto;
+
+  scrollbar-color: #3b82f6 #e6f0ff;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 481fr 503fr;
+  gap: clamp(18px, 3.05vw, 44px);
+
+  height: 100%;
+  min-height: 260px;
+}
+
+/* DATA DIRI */
+
+.infoCard {
+  display: grid;
+  grid-template-rows: repeat(7, minmax(0, 1fr));
+
+  padding:
+    clamp(12px, 2dvh, 28px)
+    clamp(16px, 2.1vw, 30px);
+
+  border-radius: 16px;
+  background: white;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 29px);
+  min-width: 0;
+}
+
+.iconCircle {
+  width: clamp(30px, 5.12dvh, 70px);
+  height: clamp(30px, 5.12dvh, 70px);
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+  background: #e6f0ff;
+  color: #3b82f6;
+}
+
+.iconCircle svg {
+  width: 64%;
+  height: 64%;
+}
+
+.infoRow p {
+  min-width: 0;
+  margin: 0;
+
+  color: #0f2d5b;
+  font-size: clamp(14px, 2.05dvh, 28px);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.infoRow .smallText {
+  font-size: clamp(12px, 1.47dvh, 20px);
+}
+
+/* KEBUTUHAN DUKUNGAN */
+
+.supportCard {
+  padding:
+    clamp(14px, 1.9dvh, 26px)
+    clamp(12px, 1.2vw, 17px);
+
+  border-radius: 16px;
+  background: white;
+}
+
+.supportCard h2 {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.4vw, 35px);
+
+  margin: 0;
+  padding-bottom: clamp(12px, 1.2dvh, 16px);
+  border-bottom: 1px solid #e6f0ff;
+
+  color: #0f2d5b;
+  font-size: clamp(17px, 2.05dvh, 28px);
+  font-weight: 400;
+}
+
+.supportCard h2 svg {
+  width: clamp(40px, 5.42dvh, 74px);
+  height: clamp(40px, 5.42dvh, 74px);
+  flex-shrink: 0;
+  color: #3b82f6;
+}
+
+.supportBox {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  min-height: clamp(100px, 11.2dvh, 153px);
+  margin-top: clamp(18px, 2.1dvh, 29px);
+  padding: clamp(14px, 2.2vw, 32px);
+
+  border: 1px solid #3b82f6;
+  border-radius: 10px;
+}
+
+.supportBox svg {
+  width: clamp(32px, 4.1dvh, 56px);
+  height: clamp(32px, 4.1dvh, 56px);
+  flex-shrink: 0;
+  color: #3b82f6;
+}
+
+.supportBox p {
+  margin: 0;
+  color: #0f2d5b;
+  font-size: clamp(14px, 1.47dvh, 20px);
+  line-height: 1.25;
+}
+
+/* JADWAL DAN RIWAYAT */
+
+.tablePanel,
+.historyPanel {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.tablePanel {
+  gap: clamp(10px, 1.3dvh, 18px);
+}
+
+.historyPanel {
+  padding-top: clamp(12px, 1.9dvh, 26px);
+  box-sizing: border-box;
+}
+
+.semester {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  align-self: flex-end;
+  flex-shrink: 0;
+  padding: 8px 12px;
+
+  border: 1px solid #b4bfd1;
+  border-radius: 10px;
+  background: white;
+  color: #3b82f6;
+}
+
+.semester select {
+  max-width: 100%;
+  border: none;
+  background: white;
+  color: #0f2d5b;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.tableScroll {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  box-sizing: border-box;
+
+  overflow: auto;
+  border: 1px solid #8393aa;
+  border-radius: 10px;
+  background: white;
+
+  scrollbar-width: thin;
+  scrollbar-color: #3b82f6 #e6f0ff;
+}
+
+.tableScroll::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+.tableScroll::-webkit-scrollbar-track {
+  background: #e6f0ff;
+  border-radius: 10px;
+}
+
+.tableScroll::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 10px;
+}
+
+.detailTable {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: #0f2d5b;
+}
+
+.detailTable th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  padding: 14px 12px;
+  background: #f3f8ff;
+  font-size: clamp(16px, 1.76dvh, 24px);
+}
+
+.detailTable td {
+  padding: 14px 12px;
+  font-size: clamp(14px, 1.47dvh, 20px);
+}
+
+.detailTable th,
+.detailTable td {
+  border-bottom: 2px solid #e3edff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* TABEL JADWAL KULIAH */
+
+.scheduleTable {
+  min-width: 650px;
+}
+
+.scheduleTable th {
+  height: clamp(42px, 4.1dvh, 56px);
+  padding: 10px 12px;
+}
+
+.scheduleTable td {
+  height: clamp(30px, 3.15dvh, 43px);
+  padding: 6px 12px;
+}
+
+.scheduleTable .dayCell {
+  border-right: 2px solid #e3edff;
+  font-size: clamp(16px, 1.76dvh, 24px);
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.scheduleTable .courseCell {
+  text-align: left;
+}
+
+/* TABEL RIWAYAT PENDAMPINGAN */
+
+.historyTable {
+  min-width: 850px;
+}
+
+.historyTable th {
+  height: clamp(44px, 4.55dvh, 62px);
+  padding: 10px 12px;
+}
+
+.historyTable td {
+  height: clamp(48px, 5.12dvh, 70px);
+  padding: 6px 12px;
+}
+
+.historyTable td:nth-child(1),
+.historyTable td:nth-child(2) {
+  white-space: nowrap;
+}
+
+.historyTable .blankHistoryRow td {
+  height: clamp(48px, 5.12dvh, 70px);
+}
+
+.detailTable .emptyCell {
+  height: 100px;
+  color: #526f99;
+}
+
+/* STATUS PENDAMPINGAN */
+
+.pending,
+.finished {
+  display: inline-block;
+  padding: 4px 15px;
+
+  border: 1px solid #ff7900;
+  border-radius: 20px;
+  background: #fff7ee;
+  color: #ff7900;
+
+  white-space: nowrap;
+}
+
+.finished {
+  border-color: #04c94c;
+  background: #dffce9;
+  color: #00af43;
+}
+
+/* MODAL RESET */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  background: #e6f0ff66;
+}
+
+.modal {
+  width: min(577px, 100%);
+  max-height: 90dvh;
+  overflow: auto;
+
+  padding: clamp(28px, 5dvh, 65px) 30px 30px;
+  border: 1px solid #567098;
+  border-radius: 20px;
+  background: white;
+
+  color: #0f2d5b;
+  text-align: center;
+}
+
+.modal > svg {
+  display: block;
+  margin: 0 auto;
+  color: #3b82f6;
+}
+
+.modal h2 {
+  margin: 20px 0;
+  font-size: 28px;
+}
+
+.modal p {
+  color: #567098;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.modalButtons {
+  display: flex;
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.modalButtons button {
+  flex: 1;
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  border: 1px solid #3b82f6;
+  border-radius: 16px;
+  background: white;
+  color: #3b82f6;
+
+  font-family: inherit;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.modalButtons button:last-child {
+  background: #3b82f6;
+  color: white;
+}
+
+/* NOTIFIKASI */
+
+.toast {
+  position: fixed;
+  top: 75px;
+  right: 16px;
+  z-index: 40;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  width: min(420px, calc(100vw - 32px));
+  padding: 18px 35px 18px 16px;
+
+  border: 1px solid #567b51;
+  border-radius: 20px;
+  background: #beffb0;
+  box-shadow: 0 3px 4px #00000040;
+  color: #087a00;
+}
+
+.check {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+  background: #20c20c;
+  color: white;
+  font-size: 26px;
+}
+
+.toast strong {
+  font-size: 19px;
+}
+
+.toast p {
+  margin: 5px 0 0;
+  font-size: 13px;
+}
+
+.toast button {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+
+  border: none;
+  background: transparent;
+  color: #087a00;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* FOKUS KEYBOARD */
+
+.frame button:focus-visible,
+.frame a:focus-visible,
+.modal button:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 3px;
+}
+
+/* LAYAR KECIL */
+
+@media (max-width: 1000px) {
+  .profileCard {
+    padding-left: 35px;
+  }
+
+  .identity {
+    gap: 14px;
+  }
+
+  .identityText h1 {
+    font-size: 24px;
+  }
+
+  .tabs {
+    gap: 10px;
+  }
+
+  .tabs button {
+    font-size: 15px;
+  }
+
+  .cards {
+    gap: 16px;
+  }
+
+  .infoRow {
+    gap: 12px;
+  }
+
+  .supportBox {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 650px) {
+  .profileCard {
+    height: auto;
+    min-height: 190px;
+    padding: 65px 14px 20px;
+  }
+
+  .identity {
+    gap: 12px;
+  }
+
+  .identityText h1 {
+    font-size: 21px;
+  }
+
+  .identityMeta {
+    font-size: 11px;
+  }
+
+  .resetButton {
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  .tabs {
+    grid-template-columns: 1fr 1fr 1.4fr;
+    gap: 7px;
+  }
+
+  .tabs button {
+    height: 48px;
+    padding: 0 5px;
+    font-size: 13px;
+  }
+
+  .cards {
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .infoCard {
+    min-height: 340px;
+  }
+
+  .supportCard {
+    min-height: 230px;
+  }
+
+  .historyPanel {
+    padding-top: 8px;
+  }
+
+  .modalButtons {
+    gap: 12px;
+  }
+}
