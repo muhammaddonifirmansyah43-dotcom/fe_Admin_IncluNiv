@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-import { Ikon, menuSidebar } from "../pengajuan/DataMahasiswa";
+import { Ikon, menuSidebar } from "../mahasiswa/DataMahasiswa";
 import styles from "./dashboard.module.css";
 
 const pengajuanDiproses = [

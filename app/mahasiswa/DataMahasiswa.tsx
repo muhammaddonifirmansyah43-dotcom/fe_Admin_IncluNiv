@@ -300,7 +300,7 @@ export const menuSidebar: {
   ikon: NamaIkon;
 }[] = [
   { nama: "Dashboard", href: "/dashboard", ikon: "dashboard" },
-  { nama: "Data mahasiswa", href: "/pengajuan", ikon: "users" },
+  { nama: "Data mahasiswa", href: "/mahasiswa", ikon: "users" },
   { nama: "Data Volunteer", href: "/volunteer", ikon: "users" },
   { nama: "Pengajuan", href: "/pengajuan", ikon: "clipboard" },
   { nama: "Penjadwalan", href: "/jadwal", ikon: "calendar" },
@@ -605,7 +605,7 @@ export default function DataMahasiswa() {
                         {menuAktif === mahasiswa.id && (
                           <div className={styles.actionMenu}>
                             <Link
-                              href={`/pengajuan/${mahasiswa.id}`}
+                              href={`/mahasiswa/${mahasiswa.id}`}
                               className={styles.detailButton}
                               onClick={() => setMenuAktif(null)}
                             >
